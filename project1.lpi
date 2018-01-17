@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="FlyBufer 3.0 Cross"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="3"/>
+      <Language Value="0419"/>
+      <StringTable CompanyName="FlyBufer.ru" InternalName="Cross" LegalCopyright="FlyBufer.ru" ProductName="FlyBufer"/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <DestinationDirectory Value="\home\nezkazhu\Рабочий стол\GIT-FlyBufer3.0\222"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="2">
+      <Item1>
+        <PackageName Value="LazMouseAndKeyInput"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+    </RequiredPackages>
+    <Units Count="12">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\skin1\unit2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Open"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit2"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\skin1\unit3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Save"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit3"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\skin1\unit4.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Del"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit4"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\skin1\unit5.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Tabs"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit5"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\skin1\unit6.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Unit6"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\skin1\unit7.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form_Add"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit7"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\skin1 - копия\unit8.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormOnOff"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit8"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\unit9.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit9"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\Новая папка\unit10.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormSettings"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit10"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="..\testqueueasynccall.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TestQueueAsyncCall"/>
+      </Unit11>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="FlyBufer 3.0 Cross"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\skin1;..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\skin1 - копия;..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0\img\Новая папка;..\..\OUT\4) Коддинг\__FlyByfer__\2) Исходники FlyBufer3.0"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+        <StripSymbols Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

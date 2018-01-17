@@ -1,0 +1,78 @@
+object Form_Save: TForm_Save
+  Left = 559
+  Height = 63
+  Top = 117
+  Width = 373
+  BorderStyle = bsNone
+  Caption = 'Form_Save'
+  ClientHeight = 63
+  ClientWidth = 373
+  Color = 15525084
+  Font.Height = -19
+  FormStyle = fsSystemStayOnTop
+  OnShow = FormShow
+  LCLVersion = '1.8.0.4'
+  object Btn_Save: TButton
+    Left = 8
+    Height = 25
+    Top = 32
+    Width = 96
+    Caption = 'Сахранить'
+    Font.Height = -12
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Btn_WithoutSave: TButton
+    Left = 110
+    Height = 25
+    Top = 32
+    Width = 154
+    Caption = 'Закрыть без сохранения'
+    Font.Height = -12
+    OnClick = Btn_WithoutSaveClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Btn_Cancel: TButton
+    Left = 270
+    Height = 25
+    Top = 32
+    Width = 96
+    Caption = 'Отмена'
+    Font.Height = -12
+    OnClick = Btn_CancelClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Image1: TImage
+    Left = 0
+    Height = 24
+    Top = 0
+    Width = 373
+    Align = alTop
+    OnMouseUp = Image1MouseUp
+    Picture.Data = {
+      07544269746D6170DE000000424DDE0000000000000036000000280000000700
+      0000070000000100180000000000A8000000120B0000120B0000000000000000
+      0000CAB399CAB399CAB399CAB399CAB399CAB399CAB399000000CAB399CAB399
+      CAB399CAB399CAB399CAB399CAB399000000CAB399CAB399CAB399CAB399CAB3
+      99CAB399CAB399000000CAB399CAB399CAB399CAB399CAB399CAB399CAB39900
+      0000CAB399CAB399CAB399CAB399CAB399CAB399CAB399000000CAB399CAB399
+      CAB399CAB399CAB399CAB399CAB399000000CAB399CAB399CAB399CAB399CAB3
+      99CAB399CAB399000000
+    }
+    Stretch = True
+  end
+  object Label_Save: TLabel
+    Left = 128
+    Height = 22
+    Top = 0
+    Width = 111
+    Caption = 'Сохранить?'
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Style = [fsBold, fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+end

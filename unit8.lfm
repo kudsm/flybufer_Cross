@@ -1,0 +1,19 @@
+object FormOnOff: TFormOnOff
+  Left = 357
+  Height = 1
+  Top = 135
+  Width = 281
+  BorderStyle = bsNone
+  Caption = 'FormOnOff'
+  Color = clBlue
+  FormStyle = fsSystemStayOnTop
+  OnClick = FormClick
+  OnCreate = FormCreate
+  LCLVersion = '1.8.0.4'
+  Visible = True
+  object Timer1: TTimer
+    Interval = 10
+    OnTimer = Timer1Timer
+    left = 59
+  end
+end
