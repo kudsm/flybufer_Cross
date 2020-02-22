@@ -15,7 +15,7 @@ uses
 
 begin
  // Application.Scaled:=True;
- Application.Title:='FlyBufer 3.0 Cross';
+  Application.Title:='FlyBufer 3.0 Cross';
   RequireDerivedFormResource:=True;
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);

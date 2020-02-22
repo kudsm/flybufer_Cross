@@ -1,12 +1,12 @@
 object Form1: TForm1
   Left = 1152
-  Height = 545
+  Height = 456
   Top = 162
-  Width = 634
+  Width = 393
   BorderStyle = bsNone
   Caption = 'FlyBufer 3.0 Cross'
-  ClientHeight = 545
-  ClientWidth = 634
+  ClientHeight = 456
+  ClientWidth = 393
   Color = 15525084
   FormStyle = fsSystemStayOnTop
   OnClick = FormClick
@@ -20,13 +20,13 @@ object Form1: TForm1
   object Panel_Down: TPanel
     Left = 0
     Height = 54
-    Top = 491
-    Width = 634
+    Top = 402
+    Width = 393
     Align = alBottom
     BevelOuter = bvNone
     Caption = 'Panel_Down'
     ClientHeight = 54
-    ClientWidth = 634
+    ClientWidth = 393
     Color = 15525084
     ParentColor = False
     TabOrder = 0
@@ -34,7 +34,7 @@ object Form1: TForm1
       Left = 2
       Height = 38
       Top = 16
-      Width = 630
+      Width = 389
       Align = alClient
       OnClick = Image1Click
       OnMouseDown = LabelBloki_MouseDown
@@ -207,7 +207,7 @@ object Form1: TForm1
       Stretch = True
     end
     object Img_R1: TImage
-      Left = 632
+      Left = 391
       Height = 38
       Top = 16
       Width = 2
@@ -223,7 +223,7 @@ object Form1: TForm1
       Left = 0
       Height = 16
       Top = 0
-      Width = 634
+      Width = 393
       Align = alTop
       OnMouseDown = LabelBloki_MouseDown
       Picture.Data = {
@@ -766,7 +766,7 @@ object Form1: TForm1
   end
   object Img_L: TImage
     Left = 0
-    Height = 476
+    Height = 387
     Top = 15
     Width = 2
     Align = alLeft
@@ -778,8 +778,8 @@ object Form1: TForm1
     Stretch = True
   end
   object Img_R: TImage
-    Left = 632
-    Height = 476
+    Left = 391
+    Height = 387
     Top = 15
     Width = 2
     Align = alRight
@@ -794,7 +794,7 @@ object Form1: TForm1
     Left = 0
     Height = 15
     Top = 0
-    Width = 634
+    Width = 393
     Align = alTop
     OnClick = Img_Polosa_TopClick
     OnMouseDown = Img_Polosa_TopMouseDown

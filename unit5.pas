@@ -152,7 +152,7 @@ begin
   ImageTabs := TImage.Create(Panel_all);
   ImageTabs.Parent := Panel_all;
   ImageTabs.Left := 1;
-  ImageTabs.Height := LabelObrazec.Height+2;
+  ImageTabs.Height := LabelObrazec.Height+5;
   ImageTabs.Top := rast+(i-1)*(ImageTabs.Height+rast);//5+i*30+i*2;
   ImageTabs.Constraints.MinWidth := 278-61;
   //ImageTabs.Constraints.MinHeight:=30;
@@ -212,12 +212,16 @@ begin
     LabelTABS.Caption := Form1.Memo_E.Lines[0];
 
     LabelTABS.Transparent:=True;
-    LabelTABS.Constraints.MaxHeight:=LabelObrazec.Height;
-    LabelTABS.Constraints.MaxWidth:=ImageTabs.Width-4;
-    LabelTABS.Constraints.MinHeight:=LabelObrazec.Height+4;
+    LabelTABS.Constraints.MaxHeight:=ImageTabs.Height-0;
+    LabelTABS.Constraints.MinWidth:=ImageTabs.Constraints.MinWidth-4;
+    LabelTABS.Constraints.MaxWidth:=ImageTabs.Constraints.MaxWidth-4;
+    LabelTABS.Constraints.MinHeight:=ImageTabs.Height+0;
+
+
+       //LabelTABS.Color:=clred;
     LabelTABS.WordWrap:=True;
 
-    Panel_all.Height:=LabelTABS.Top+LabelTABS.Height;
+    Panel_all.Height:=ImageTabs.Top+ImageTabs.Height+2;
 
 
     //События по Label

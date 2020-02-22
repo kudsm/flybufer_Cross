@@ -737,7 +737,7 @@ begin
     ImageBloki.Parent:=Form1;
     ImageBloki.Left:=3;
     ImageBloki.Width := 246;
-    ImageBloki.Height:=LabelObrazec.Height+18;
+    ImageBloki.Height:=LabelObrazec.Height+11;
     ImageBloki.Top:=(TopTop+rast)+(i-1)*(ImageBloki.Height+rast);//5+i*30+i*2;
     ImageBloki.Constraints.MinWidth:=278-32;
     //ImageBloki.Constraints.MinHeight:=30;
@@ -755,20 +755,20 @@ begin
   FreeAndNil(FC);
     LabelBloki:=TLabel.Create(Form1);
     LabelBloki.Parent:=Form1;
-    LabelBloki.Left:=ImageBloki.Left+8;
-    LabelBloki.Top:=ImageBloki.Top+5;//BlokTop;//35+VisVklCount*30+VisVklCount*2-30+1;
+    LabelBloki.Left:=ImageBloki.Left+6;
+    LabelBloki.Top:=ImageBloki.Top+1;//BlokTop;//35+VisVklCount*30+VisVklCount*2-30+1;
 
 
 
 
-    LabelBloki.Constraints.MinWidth:=278-16-16;
+
     LabelBloki.Font.Size:=LabelObrazec.Font.Size;
     LabelBloki.Font.Color:=LabelObrazec.Font.Color;
     LabelBloki.Font.Style:=LabelObrazec.Font.Style;
 
 
 
-      LabelBloki.Color:=clRed;
+      //LabelBloki.Color:=clRed;
 
 
     LabelBloki.Name:= Memo_Din.Lines[i];
@@ -776,7 +776,8 @@ begin
 
     //LabelBloki.Transparent:=True;
     LabelBloki.Constraints.MaxHeight:=LabelObrazec.Height;
-    LabelBloki.Constraints.MaxWidth:=280-6-16-17;
+    LabelBloki.Constraints.MinWidth:=234;
+    LabelBloki.Constraints.MaxWidth:=234;
     LabelBloki.Constraints.MinHeight:=LabelObrazec.Height+8;
     LabelBloki.WordWrap:=True;
 

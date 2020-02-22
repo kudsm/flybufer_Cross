@@ -1,18 +1,18 @@
 object Form_Tabs: TForm_Tabs
-  Left = 306
-  Height = 258
-  Top = 137
+  Left = 1671
+  Height = 284
+  Top = 333
   Width = 219
   BorderStyle = bsNone
   Caption = 'Form_Tabs'
-  ClientHeight = 258
+  ClientHeight = 284
   ClientWidth = 219
   Color = 13284249
   FormStyle = fsSystemStayOnTop
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.8.0.4'
+  LCLVersion = '2.0.6.0'
   object Panel_all: TPanel
     Left = 0
     Height = 243
@@ -28,7 +28,7 @@ object Form_Tabs: TForm_Tabs
     OnMouseWheelUp = Panel_allMouseWheelUp
     object Memo_DinTab: TMemo
       Left = 24
-      Height = 90
+      Height = 500
       Top = 40
       Width = 150
       Lines.Strings = (
@@ -41,7 +41,7 @@ object Form_Tabs: TForm_Tabs
     end
     object LabelObrazec: TLabel
       Left = 137
-      Height = 19
+      Height = 17
       Top = 224
       Width = 89
       Caption = 'LabelObrazec'
@@ -56,7 +56,7 @@ object Form_Tabs: TForm_Tabs
   object Panel_Down: TPanel
     Left = 0
     Height = 30
-    Top = 228
+    Top = 254
     Width = 219
     Align = alBottom
     BevelOuter = bvNone
@@ -779,7 +779,7 @@ object Form_Tabs: TForm_Tabs
       Left = 8
       Height = 15
       Top = 36
-      Width = 55
+      Width = 59
       Caption = 'Удалить?'
       Font.Height = -12
       Font.Style = [fsBold]
@@ -1345,7 +1345,7 @@ object Form_Tabs: TForm_Tabs
       Left = 8
       Height = 17
       Top = 36
-      Width = 76
+      Width = 75
       Caption = 'Очистить?'
       Font.Style = [fsBold]
       ParentColor = False
@@ -1370,9 +1370,9 @@ object Form_Tabs: TForm_Tabs
     OnMouseUp = Panel_TopMouseUp
     object Label_Caption: TLabel
       Left = 4
-      Height = 19
+      Height = 21
       Top = 0
-      Width = 155
+      Width = 162
       Caption = 'Диспетчер вкладок'
       Font.Color = clWhite
       Font.Height = -16
