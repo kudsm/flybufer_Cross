@@ -604,7 +604,9 @@ begin
    //end;
 end;
 
-function TForm1.FC_FormStroy: Integer;
+
+
+function TForm1.FC_FormStroy(): Integer;
 var
   sr: TSearchRec;
   Ini: TIniFile;
@@ -672,7 +674,7 @@ begin
 
 end;
 
-function TForm1.FC_ActVars: Integer;
+function TForm1.FC_ActVars(): Integer;
 var
   i:integer;
 begin
@@ -715,7 +717,7 @@ begin
   data_bc:=Memo_Din.Text;
 end;
 
-function TForm1.FC_BC_Stroy: Integer;
+function TForm1.FC_BC_Stroy(): Integer;
 var
    FC:TComponent;
    i,rast:integer;
@@ -734,7 +736,8 @@ begin
     ImageBloki:=TImage.Create(Form1);
     ImageBloki.Parent:=Form1;
     ImageBloki.Left:=3;
-    ImageBloki.Height:=LabelObrazec.Height;
+    ImageBloki.Width := 246;
+    ImageBloki.Height:=LabelObrazec.Height+18;
     ImageBloki.Top:=(TopTop+rast)+(i-1)*(ImageBloki.Height+rast);//5+i*30+i*2;
     ImageBloki.Constraints.MinWidth:=278-32;
     //ImageBloki.Constraints.MinHeight:=30;
@@ -752,8 +755,11 @@ begin
   FreeAndNil(FC);
     LabelBloki:=TLabel.Create(Form1);
     LabelBloki.Parent:=Form1;
-    LabelBloki.Left:=ImageBloki.Left+4;
-    LabelBloki.Top:=ImageBloki.Top-2;//BlokTop;//35+VisVklCount*30+VisVklCount*2-30+1;
+    LabelBloki.Left:=ImageBloki.Left+8;
+    LabelBloki.Top:=ImageBloki.Top+5;//BlokTop;//35+VisVklCount*30+VisVklCount*2-30+1;
+
+
+
 
     LabelBloki.Constraints.MinWidth:=278-16-16;
     LabelBloki.Font.Size:=LabelObrazec.Font.Size;
@@ -761,13 +767,17 @@ begin
     LabelBloki.Font.Style:=LabelObrazec.Font.Style;
 
 
+
+      LabelBloki.Color:=clRed;
+
+
     LabelBloki.Name:= Memo_Din.Lines[i];
     Memo_E.Lines.LoadFromFile(folder_txt+act_tab +'/'+Memo_Din.Lines[i]+'.sm');
 
-    LabelBloki.Transparent:=True;
+    //LabelBloki.Transparent:=True;
     LabelBloki.Constraints.MaxHeight:=LabelObrazec.Height;
     LabelBloki.Constraints.MaxWidth:=280-6-16-17;
-    LabelBloki.Constraints.MinHeight:=LabelObrazec.Height+4;
+    LabelBloki.Constraints.MinHeight:=LabelObrazec.Height+8;
     LabelBloki.WordWrap:=True;
 
     //Если есть название блока (первая строка в файле), то блок назвать ей
@@ -862,7 +872,7 @@ begin
   end;
 end;
 
-function TForm1.FC_FormHide: Integer;
+function TForm1.FC_FormHide(): Integer;
 begin
  Form1.Visible:= False;
 end;
@@ -899,7 +909,9 @@ begin
     end;
 end;
 
-function TForm1.FC_HideForms: Integer;
+
+
+function TForm1.FC_HideForms(): Integer;
 begin
  //Скрываем формы
    if Form_NoClose <> 1 then
@@ -939,7 +951,11 @@ begin
   Form_Del.Show;
 end;
 
-function TForm1.FC_StartWithOS: Integer;
+
+
+
+
+function TForm1.FC_StartWithOS(): Integer;
   var
 reg: TRegistry;
 s:string;
@@ -972,7 +988,7 @@ begin
   end;
 end;
 
-function TForm1.FC_NoStartWithOS: Integer;
+function TForm1.FC_NoStartWithOS(): Integer;
  var
  reg: TRegistry;
  begin
@@ -995,7 +1011,7 @@ function TForm1.FC_NoStartWithOS: Integer;
    end;
 end;
 
-function TForm1.FC_Settings: Integer;
+function TForm1.FC_Settings(): Integer;
 var
   Ini: TIniFile;
   sr: TSearchRec;
@@ -1041,7 +1057,7 @@ end;
   Ini.WriteString('System', 'position_show', position_show); //сверху/снизу
 end;
 
-function TForm1.FC_Language: Integer;
+function TForm1.FC_Language(): Integer;
 begin
  if language = 'Ru' then
  begin
