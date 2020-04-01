@@ -94,6 +94,8 @@ type
    function FC_ForDbClick():Integer;
    function FC_FormMovie():Integer;
 
+
+
  end;
 
 var
@@ -453,7 +455,7 @@ begin
 
 end;
 
-function TForm_Open.FC_Modif_Bc_or_NO: Integer;
+function TForm_Open.FC_Modif_Bc_or_NO(): Integer;
 begin
  //ПРОВЕРКА БЫЛ ЛИ ИЗМЕНЕН БЛОК
  //Несохраненный текст (нужны при подтверждении сохранения)
@@ -608,7 +610,7 @@ begin
 
 end;
 
-function TForm_Open.FC_Resize: Integer;
+function TForm_Open.FC_Resize(): Integer;
 begin
    //Ресйзинг окна
    if Form_Open.Width < 450 then
@@ -628,7 +630,7 @@ begin
    SB_Close.Left:=Panel_Btns.Width-SB_Close.Width-2;
 end;
 
-function TForm_Open.FC_ForDbClick: Integer;
+function TForm_Open.FC_ForDbClick(): Integer;
 begin
   //Если окно развернуто
  if (Form_Open.Width=Screen.Width) AND (Form_Open.Height=Screen.Height)
@@ -658,7 +660,7 @@ begin
  end;
 end;
 
-function TForm_Open.FC_FormMovie: Integer;
+function TForm_Open.FC_FormMovie(): Integer;
 var
  razn_X,razn_Y,i:integer;
 begin
@@ -675,6 +677,8 @@ begin
  end;
 
 end;
+
+
 
 
 

@@ -6,7 +6,11 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  StdCtrls, Buttons, IniFiles, Types, LCLType , Clipbrd, Menus, Registry,  MouseAndKeyInput;
+  StdCtrls, Buttons, IniFiles, Types, LCLType , Clipbrd, Menus, Registry,  MouseAndKeyInput, LCLIntf,
+
+
+    xlib, x, xcms, xrender, xresource, xshm, xutil, ctypes,
+    xatom;
 
 type
 
@@ -24,6 +28,8 @@ type
     MenuItem2: TMenuItem;
     PopupMenu1: TPopupMenu;
     NoHide1Sec: TTimer;
+    Timer2: TTimer;
+    Timer3: TTimer;
     TimerCopyPaste: TTimer;
     TrayIcon1: TTrayIcon;
     zapas_down2: TImage;
@@ -78,6 +84,7 @@ type
     procedure Image1Click(Sender: TObject);
     procedure Image1MouseDown(Sender: TObject; Button: TMouseButton;
      Shift: TShiftState; X, Y: Integer);
+    procedure Img_DownClick(Sender: TObject);
     procedure SB_SettingsClick(Sender: TObject);
     procedure SB_SettingsMouseDown(Sender: TObject; Button: TMouseButton;
      Shift: TShiftState; X, Y: Integer);
@@ -162,13 +169,14 @@ type
     procedure LabelBloki_MouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure Timer2Timer(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure Timer3Timer(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
     procedure TimerCopyPasteTimer(Sender: TObject);
     procedure Timer_StroyTimer(Sender: TObject);
     procedure TrayIcon1Click(Sender: TObject; Button: TMouseButton;
      Shift: TShiftState; X, Y: Integer);
     procedure TrayIcon1MouseDown(Sender: TObject; Button: TMouseButton;
      Shift: TShiftState; X, Y: Integer);
-
 
 
 
@@ -191,6 +199,9 @@ type
     function FC_NoStartWithOS():Integer;
     function FC_Settings():Integer;
     function FC_Language():Integer;
+
+
+
     { public declarations }
   end;
 
@@ -205,6 +216,10 @@ var
   NoHdeOneSecond:Boolean;
   autoload, label_size:Integer;
   OS, folder_txt,language, position_show:String;
+
+
+
+
 
   //Для языка
   NoBlocs,Add,Paste,PasteInFb,PasteFromFb,Copy,Settings,Fix,CloseL:String;
@@ -301,12 +316,28 @@ begin
        Memo_Din.SelLength:=length(Memo_Din.Text)-1;
 
      Clipboard.AsText:= trim(Memo_Din.SelText);
-     Form1.Hide;
 
 
+
+        //Скрываем форму
+       form1.Hide;
+
+       //Вставляем текст
        KeyInput.Apply([ssCtrl]);
        KeyInput.Press($56);   //Вставляем - ctrl+v
        KeyInput.Unapply([ssCtrl]);
+       //Задержка
+       sleep(100);
+       //Показываем форму
+       form1.Show;
+
+
+     //Form1.Hide;
+     //
+     //
+     //  KeyInput.Apply([ssCtrl]);
+     //  KeyInput.Press($56);   //Вставляем - ctrl+v
+     //  KeyInput.Unapply([ssCtrl]);
 
 end;
 
@@ -458,6 +489,9 @@ procedure TForm1.Timer2Timer(Sender: TObject; Button: TMouseButton;
 var
    MouseClickCount:integer;
 begin
+
+
+
   //if (ssCtrl in Shift) //and (Key = VK_CONTROL)
   //then
   //begin
@@ -504,10 +538,31 @@ begin
 
 end;
 
-procedure TForm1.TimerCopyPasteTimer(Sender: TObject);
+procedure TForm1.Timer3Timer(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+var
+  d,display: PDisplay;
+  e: TXEvent;
+  msg: PChar;
+  ourScreen: cint;
+  w, rootWindow: TWindow;
+
+
+
 begin
 
-    if TimerCopyPaste.Tag = 4 then
+       display  := XOpenDisplay(nil);
+        ourScreen := DefaultScreen(display);
+        rootWindow := DefaultRootWindow(display);
+
+        XCirculateSubwindowsUp(XOpenDisplay(nil), DefaultRootWindow(display));
+
+
+end;
+
+procedure TForm1.TimerCopyPasteTimer(Sender: TObject);
+begin
+   if TimerCopyPaste.Tag = 4 then
    begin
        //Показываем форму
        Form1.Show;
@@ -544,6 +599,11 @@ begin
         TimerCopyPaste.Tag:=2;
       end;
    end;
+
+
+
+
+
 
 
 
@@ -603,6 +663,7 @@ begin
    //  end;
    //end;
 end;
+
 
 
 
@@ -822,8 +883,9 @@ begin
      ImageCopZam.Constraints.MinHeight:=26;
      ImageCopZam.Constraints.MaxWidth:=26;
      ImageCopZam.Constraints.MaxHeight:=26;
+     ImageCopZam.Height:= 26;
      ImageCopZam.Top:=ImageBloki.Top+((ImageBloki.Height div 2) - (ImageCopZam.Height div 2));
-
+                           //showmessage(inttostr(ImageBloki.Top));
      ImageCopZam.Name:= 'ImgZam'+(Memo_Din.Lines[i]);
      ImageCopZam.Hint:=Memo_Din.Lines[i];//StrToInt(delete(Memo_Din.Lines[i],1,2));//i;
      //showmessage(delete(Memo_Din.Lines[i],1,2));
@@ -851,7 +913,7 @@ begin
     ImageCop.Constraints.MaxWidth:=16+10;
     ImageCop.Constraints.MaxHeight:=16+10;
     ImageCop.Top:=ImageCopZam.Top;
-
+                     //showmessage(inttostr(ImageCop.Top));
     ImageCop.Name:= 'ImgCop'+(Memo_Din.Lines[i]);
     ImageCop.Hint:=Memo_Din.Lines[i];
     ImageCop.Picture:=zapas_copy1.Picture;//.Bitmap.LoadFromFile('img/skin1/copy.bmp');
@@ -1112,6 +1174,8 @@ end;
 
 
 
+
+
 //Убираем форму по кнопке
 procedure TForm1.Button_FormStroyClick(Sender: TObject);
 begin
@@ -1263,6 +1327,86 @@ begin
     Form_Tabs.Close;
   end;
   end;
+end;
+
+procedure TForm1.Img_DownClick(Sender: TObject);
+var
+  d,display: PDisplay;
+  e: TXEvent;
+  msg: PChar;
+  ourScreen: cint;
+  w, rootWindow: TWindow;
+
+  x:integer;
+  status:string;
+begin
+
+       //Скрываем форму
+       form1.Hide;
+
+       //Вставляем текст
+       KeyInput.Apply([ssCtrl]);
+       KeyInput.Press($56);   //Вставляем - ctrl+v
+       KeyInput.Unapply([ssCtrl]);
+       //Задержка
+       sleep(100);
+       //Показываем форму
+       form1.Show;
+       //Showmessage(IntToStr(WindowFromPoint(Mouse.CursorPos)));
+       //_________показать хъэндл Form1______________
+       //Showmessage(IntToStr(Form1.Handle))IntToStr;
+
+       d := XOpenDisplay(nil);
+       display  := XOpenDisplay(nil);
+       //showmessage(' Номер соединения: ' + IntToStr(ScreenCount(d)));
+
+
+        ourScreen := DefaultScreen(display);
+        //rootWindow := RootWindow (d, ourScreen); // Корневое окно
+        rootWindow := DefaultRootWindow(display);
+
+        // Выбирает нужные события
+        XSelectInput(display, rootWindow, ExposureMask or KeyPressMask or ButtonPressMask);
+
+  // цикл событий
+  while (True) do
+  begin
+    XNextEvent(d, @e);
+
+    case e._type of
+      Expose:
+        // Рисует прямоугольник (квадрат) и выводит текст
+      begin
+        XFillRectangle(display, rootWindow, DefaultGC(display, ourScreen), 20, 20, 10, 10);
+        XDrawString(display, rootWindow, DefaultGC(display, ourScreen), 50, 50, msg, strlen(msg));
+        XStoreName(display, rootWindow, 'dd');
+
+
+        //w2 := ('dd');
+        //XLowerWindow(d, w2);
+      end;
+      //KeyPress:
+      // Выход из программы при нажатии клавиши
+      //Break;
+      //ButtonPress:
+      // Заканчивает программу одним щелчком мыши
+      //Break;
+    end;
+   end;
+
+
+
+
+
+        w := Form1.Handle;
+          // Выбирает нужные события
+  XSelectInput(d, w, ExposureMask or KeyPressMask or ButtonPressMask);
+
+
+
+       XLowerWindow(d, w);
+
+
 end;
 
 procedure TForm1.SB_SettingsClick(Sender: TObject);
